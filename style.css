@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Used flexbox because it helps create a responsive layout that adjusts to different screen sizes */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url(background.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #ff6347;
+    color: white;
+    position: relative;/*position: relative allows for positioning of child elements if needed later. */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    text-align: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-family: 'Lobster', cursive; 
+    font-size: 28px; 
+    color: white; 
+}
+
+
+
+header .slogan  {
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 150px);
+}
+
+.slogan marquee {
+    display: inline-block;
+    font-size: 24px;
+    font-style: italic;
+    animation: scroll 10s linear infinite;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+.category {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #ff6347;
+    text-align: center;
+}
+
+.category i {
+    margin-right: 10px;
+}
+
+
+main {
+    flex: 2; /* This area takes up two times more space than the sidebar */
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 24px;
+    font-weight: 2000;
+    margin-bottom: 20px;
+    color:#ff6347;
+}
+
+.promo, .info-section {
+    background-color:white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background: rgba(255, 255, 255, 0.5);/* Sets a semi-transparent white background to prevent the background image from being completely covered */
+}
+
+.promo h2 {
+    color: #ff6347;
+}
+
+.info-section h3{
+    color: #ff6347;
+}
+
+.promo button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.right-sidebar {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px; 
+    width: 100%;
+}
+
+.user-profile i {
+    font-size: 40px;
+    color: #ff6347;
+    margin-bottom: 5px;
+}
+
+.balance {
+    text-align: center;
+    font-size: 18px;
+    color: #ff6347;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px; 
+    width: 100%;
+}
+
+.history {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: white; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    padding: 15px;
+}
+
+.history h4 {
+    color: #ff6347;
+    font-size: 24px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.feedback {
+    width: 100%;
+    background-color: white; 
+    padding: 15px; 
+    border-radius: 5px; 
+    margin-top: 10px; 
+    text-align: center;
+    border: 1px solid lightgrey; 
+}
+
+.feedback h4 {
+    color: #ff6347; 
+    font-size: 20px; 
+    margin-bottom: 10px; 
+}
+
+.feedback button {
+    background-color: #ff6347; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+.feedback button:hover {
+    background-color: #e5533c; 
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .disabled {
+    color: grey;
+    
+}
+
+/* This is for screens that smaller than 768px*/
+@media (max-width: 768px) {
+    * {
+        flex-direction: column; 
+    }
+}
